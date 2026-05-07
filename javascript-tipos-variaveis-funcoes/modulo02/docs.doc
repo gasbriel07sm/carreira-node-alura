@@ -1,0 +1,159 @@
+# Aula 01 - Variáveis no JS
+
+três formas de declarar variáveis em JavaScript: 
+
+- var
+- let
+- const 
+
+-> A forma original é var, mas hoje em dia não é mais recomendada
+
+A diferença é que let e const podem ser reatribuidas, enquanto const não permite a alteração do valor após a atribuição inicial, ao tentar modificar uma variável declarada com const apresentará um erro de tipo, avisando que houve uma "atribuição a uma variável constante"
+
+Usamos o console.log() para exibir valores de variáveis no terminal e como executar arquivos JavaScript usando o comando node no terminal
+
+Devemos usar const como padrão, pois serve para proteger os dados de alterações indesejadas, e usar let apenas em casos que a variável terá seu valor alterado
+
+OBS! const exige que você atribua um valor no momento da criação, enquanto let permite criar a variável sem valor inicial
+
+########################################################################################################################################
+# Para saber mais: PADRÃO DE NOMES DO JAVASCRIPT
+
+Cada linguagem possui seus próprios padrões, servem não somente para a escrita de código para que funcionem, mas para criar nomes de variáveis, estruturar um programa e muito mais
+
+JavaScript é case-sensitive, ou seja, diferencia maiúsculas de minúsculas, significa que tudo o que escrevemos, sejam instruções da própria linguagem ou quando damos nome a uma variável, tem que ser feito em um mesmo padrão, o que inclui a questão de maiúsculas e minúsculas
+
+Convenções:
+
+>> camelCase: incia com a letra minúscula e a primeira letra de cada palavra em seguida é escrita com a letra maiúscula, convenção usada para variáveis e funções em JavaScript
+
+>> kehab-case: essa convenção não pode ser usada no JavaScript para variáveis e funções, pois o sinal de - representa um operador de subtração, mas pode ser usada para nomear arquivos
+
+>> PascalCase: todas as palavras começam com letra maiúscula
+
+OBS! nunca utilizar espaço nem caracteres especiais e não iniciar nome de variáveis com números
+
+Convenção significa boas práticas e padronização, estamos fazendo um código legível e bem escrito
+
+########################################################################################################################################
+# Aula 02 - Escopo de variável
+
+Variáveis se comportam de maneira diferente dependendo do contexto do código, especialmente fora de blocos
+
+> Uma variável criada com var dentro de um bloco pode ser modificada de fora dele, ou seja, representa um risco para a integridade do código
+
+> Uma variável declarada com let dentro de um bloco, ela fica restrita aquele espaço, se você tentar atribir um valor fora do bloco sem ter declarado a variável antes, o JavaScript cria automaticamente uma nova variável com var escondido, ou seja, não é a mesma variável
+
+O JavaScript trabalha com 3 escopos diferentes: bloco, função e global
+
+Escopo é um limite ou um espaçoi dentro do qual o código funciona, variáveis com escopo global por exemplo podem ser acessadas e modificadas dentro de blocos, o que é arriscado
+
+A melhor prática é usar const sempre, pois ao usarmos const impedimos que variáveis sejam alteradas aleatoriamente pleo restante do código, protegendo assim a integridade dos dados
+
+########################################################################################################################################
+# Para saber mais: MAIS VERSÕES DO JS
+
+Template literals ou template strings (forma extra de mostrar valor de variáveis)
+// usamos crase e ${}
+
+const nome = 'Alice';
+console.log(`Olá, meu nome é ${nome}.`);
+
+COMPATIBILIDADE
+A retrocompatibilidade é uma característica do JS, pois o código escrito em versões anteriores devem continuar funcionando em versões mais recentes, ou seja, um código escrito em ES5 deve ser compátivel com um ambiente em ES6, mas o contrário não pode ser verdadeiro, pois novos recursos introduzidos em versões mais recentes podem não ser suportados em ambientes mais antigos 
+
+Para garantir compatibilidade, possuimos ferramentas como transpiladores (Babel) que são usadas para converter código escrito em versões mais recentes do JavaScript para ver~soes mais antigas, dessa forma, permite que seja executado em ambientes que não suportam esses recursos mais recentes
+
+Essencial pois serve para garantir:
+
+>> Não ser possível garantir que os computadores clientes acessem as páginas web e estejam sempre atualizados com as últimas versões dos navegadores
+>> Os próprios navegadores levam algum tempo para atualizarem seus interepretadores de acordo com as últimas atualizações da linguagem
+
+########################################################################################################################################
+# Aula 03 - Lidando com Erros
+
+Entendendo a mensagem de erro:
+Quando um erro ocorre, o Node.js nos fornece informações importantes: o caminho do arquivo, o número da linha onde o erro foi identificado, uma cópia do código problemático com uma seta indicando exatamente onde está o problema, e uma mensagem descritiva do tipo de erro
+
+Stack Trace:
+É a lista de arquivos e caminhos que aparece após a mensagem de erro. Ela representa a pilha de comandos que foram executados internamente pelo Node.js nos bastidores. Normalmente não vemos isso, mas quando há um erro, o Node.js exibe todo esse código interno para nos ajudar a identificar onde o problema ocorreu
+
+Tipos comuns de erro:
+
+Erros de sintaxe: problemas com a estrutura do código, como parênteses não fechados. O VSCode geralmente já marca esses erros em vermelho
+
+Erros de referência: quando tentamos usar uma variável que não foi declarada. Esses são mais difíceis de identificar porque o VSCode não os marca automaticamente
+
+########################################################################################################################################
+# Para saber mais: CONSOLE.LOG()
+
+Método para exibir mensagens ou depurar o código durante o desenvolvimento de aplicativos web
+
+console.log() >> é uma função que tem a finalidade de imprimir mensagens ou valores no console do navegador ou terminal, facilitando o acompanhamento e deupração do código
+
+-> para usar o consule.log(), basta inserir a função seguida pelos dados que você deseja exibir no console, como strings, variáveis, objetos, arrays, entre outros
+
+//apenas texto
+console.log('Olá, Mundo!');
+
+//com variáveis
+let idade = 25;
+console.log('A idade é:', idade);
+
+########################################################################################################################################
+# Revisão de escopos
+
+ESCOPO GLOBAL
+Qualquer variável do escopo global pode ser acessada por outras partes do programa
+Uma variável considerada gloval quando não é declarda dentro de nenhuma função ou bloco
+
+EX:
+
+const nome = 'Camila' // variável global
+
+function cumprimentar() {
+    console.log(`Olá, ${nome}`); // acessar a var global
+}
+
+cumprimentar(); // 'Olá, Camila!'
+
+ESCOPO DE BLOCO
+Variáveis declaradas dentro de chaves {}, como caso de if, for, while,... 
+Não ficam acessíveis para o código quei esteja de fora, chamaos o código dentro das {} de bloco
+
+EX:
+
+if (1 > 0) {
+    let nome = 'Ana';
+    console.log(noem); // 'Ana'
+}
+
+// variável nome não está mais acessível
+console.log(nome); // error: nome is not defined
+
+OBS! Variáveis declaradas com var não seguem a regra do escopo de bloco, elas são consideradas globais e poderão ser acessadas de fora do bloco
+
+EX:
+
+if (1 > 0) {
+    var nome = 'Ana';
+    console.log(nome); // 'Ana'
+}
+
+console.log(nome); // 'Ana'
+
+OBS!!! A falta de controle de escopo é um dos motivos pelo qual o uso de var foi abandonado e as boas práticas atuais recomendam apenas o uso de const e let
+
+ESCOPO DE FUNÇÃO
+Variáveis declaradas dentro de uma função são consideradas "locais" (ou seja, o oposto de "globais") enão podem ser acessadas por código que estejam fora do bloco da função
+
+EX:
+
+function cumprimentar() {
+    const nome = 'Camila'; // variável local
+    const cumprimento = 'Olá'; // variável local
+    console.log(`${cumprimento}, ${nome}!`); // 'Olá, Camila!'
+}
+
+// variáveis não podem ser acessadas fora da função neste caso
+console.log(`${cumprimento}, ${nome}!`); // error not defined no console

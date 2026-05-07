@@ -1,0 +1,133 @@
+# Aula 01
+
+O front-end é a parte visual da aplicação, tudo que envolve tela e interface com a qual o usuário interage, como botões, formulários e produtos em um e-commerce. Esse código é executado no navegador.
+
+O back-end é tudo que acontece além da interface gráfica. É responsável por processar informações, buscar dados em bases de dados e fornecer essas informações ao front-end. Por exemplo, quando você compra um produto em um site, o back-end processa essa compra e a armazena no banco de dados.
+
+Embora front-end e back-end usem a mesma linguagem JavaScript, as ferramentas e funções disponíveis são diferentes. No front-end, o JavaScript acessa funções de cliques de botão; no back-end, essas funções não existem, mas outras são necessárias.
+
+O JavaScript é uma linguagem interpretada. O navegador é um interpretador capaz de analisar e executar código JavaScript. Para executar JavaScript fora do navegador, ou seja, no back-end, utilizamos o Node.js, que é outro interpretador que funciona através do terminal.
+
+O Node.js é a ferramenta que permite executar JavaScript no back-end, fora do ambiente do navegador.
+
+###########################################################################################################
+# Para saber mais: Características do JavaScript
+
+O JavaScript serviu ao propósito de dar interação a páginas web. Porém, com o desenvolvimento do Node.js em 2009, a partir da engine V8 do Chrome, foi possível adaptar o JavaScript para, entre outras funcionalidades, aplicações back-end.
+
+O Javascript é uma linguagem multiparadigma, ou seja, a linguagem não está restrita a uma única forma de fazer as coisas, podemos usar os parafigmas como orientação a objetos, funcional ou procedural
+
+O Javascript é uma linguagem interpretada, isso significa que seu código fonte é executado diretamente por um interepratador, que analisa o código linha por linha e executa suas instruções em tempo real
+
+A linguagem possui uma natureza mais flexível e dinâmica, fornecendo uma abordagem mais leve e ágil, por isso consideramos como uma linguagem fracamente tipada e de tipagem dinâmica, onde os tipos são inferidos durante a execução do programa, não sendo necessário declarar explicitamente o tipo de suas variáveis
+
+###########################################################################################################
+# Outros Interpretadores
+
+1 - NODE.JS
+Node é o ambiente de execução de código JavaScript, no lado do "servidor", ou runtime, funcionando fora do navegador. O Node usa o motor (engine) V8 do Google Chrome para executar o código e oferece uma ampla gama de funcionalidade para criar aplicativos web e servidores, dentro de suas características, temos:
+
+-- Suporte a bibliotecas e frameworks variados
+-- Uso no NPM para o gerenciamento de pacotes
+-- Arquitetura baseada em eventos assíncronos
+-- Popular para construção de servidores web e APIs
+
+Os scripts possuem permissões amplas por padrão
+
+2 - DENO
+Deno é um ambiente de execução para JavaScript e TypeScript, foi criado para abordar algumas limitações do Node, tendo como foco a segurança e o desenvolvimento moderno, dentro de suas características, temos:
+
+-- Sistema de segurança baseado em permissões
+-- Suporte nativo a TypeScript
+-- Não depende do NPM para o gerenciamento de pacotes
+-- Módulos importados diretamente via URL
+
+O Deno possui uma abordagem que prioriza segurança, exigindo que as pessoas desenvolvedoras concedam permissões explicitamente para operações potencialmente confidenciais, como o acesso ao sistema de arquivos ou até mesmo conectividade de rede
+
+3 - Bun
+Bun é um ambiente de execução do JavaScript criado do zero usando a linguagem de programação Zig, com foco em inicialização rápida e execução eficiente de código. Fornece ferramentas e recursos para otimizar e agilizar o desenvolvimento de aplicativos JavaScript e foi projeto para ser compatível com ecosistemas JavaScript existentes, dentro de suas características, temos:
+
+-- Alta velocidade no tempo de execução do código
+-- Design leve, resultando em uma base de código menor e menos requisitos de recursos, permitindo melhor desempenho em termos de velocidade e uso de memória em comparação com outros runtimes
+-- Otimização de desempenho, pos em vez de depender do motor V8, o Bun utiliza o JavaScriptCore do WebKit, reconhecido pelo desempenho superior
+-- Funcionalidade integrada ao oferece ferramentas e recursos nativos que agilizam o processo de desenvolvimento, incluindo empacotador integrado, substituindo a necessidade de ferramentas externas como WebPack
+-- Incorpora um executor de testes semelhantes ao Jest e carrega automaticamente as variáveis de ambiente sem exigir instalações adicionais de pacotes como o dotenv
+
+###########################################################################################################
+# VÍDEO - OQUE É NODE
+
+O navegador é o ambiente original de execução do JavaScript
+
+- node é um motor (engine) fora do navegador. é um ambiente de execução (runtime - pacote de códigos)
+
+(package.json) > arquivo que é o coração, é um manifesto de qualquer projeto que use node, fica escrito o serviço, informações de bibliotecas, configurações, etc..., guarda a lista de dependencias de todas as bibliotecas (dependencias que é o conjunto de arquivos que possuem alguma funcionalidade específica)
+
+(npm ou yarn) > gerenciadores de pacotes, são repositórios de códigos focados no node, fica na pasta node_modules, (npm install) -> acessa o repositório e instala nos node_modules e ficam disponível usarmos os comandos daquele repositório, 
+
+(package_lock.json)
+
+O node permite interepretar código JavaScript fora do navegador, funcionando de maneira somilar ao ambiente de execução presente nos browsers
+
+-- quando executamos um comando em JavaScript, o Node interpreta esse comando e faz a sua conversão para a linguagem de máquina a ser executada pelo computador, por isso o Node também pode ser chamado de JavaScript Runtime, ou um programa de execução do JavaScript
+
+-- para o processo de interpretação, o node faz uso do motor V8 do Chrome
+
+# MOTOR DO NODE
+processo do funcionamento desses motores:
+
+1 - o motor acesa o código JavaScript que veio da leitura da tag 'script' de um arquivo HTML ou por meio do download de um arquivo JavaScript
+
+2 - executa o Parser (PROCESSO DE ANÁLISE E CONVERSÃO)
+
+3 - monta a AST (Árvore de Sintaxe Abstrata), um mapeamento que identifica o que cada parte do código está fazendo 
+
+4 - Interpreta a AST, ao interpretar esse AST, o motor gera bytecodes que são executados pelo interpretador, funções chamadas com frequência (HOT PATHS) sao otimizadas e compiladas para código de máquina nativo pelo compilador, neste processo temos um estágio de otimização do código gerado
+
+PROCESSO DA EXECUÇÃO DO CÓDIGO
+
+CÓDIGO JAVA SCRIPT
+       |
+       v
+ANÁLISE E CONVERSÃO --> ÁRVORE SINTÁTICA ABSTRATA (AST)
+                                    |
+                                    v
+                            INTERPRETADOR DA V8 --> COMPULADOR TURBOFAN
+                                     |                      |
+                                     v                      v
+                                  BYTECODE  <--  CÓDIGO DE MÁQUINA OTIMIZADO
+
+TEMOS DOIS CAMINHOS:
+- o interpretador da v8 (Ignition) percorre a AST e gera bytecodes que são executados imediatamente já o TurboFan é o compulador otimizador, ele identifica funções executadas com frequência (HOT PATHS) e as compila para código de máquina nativo, muito mais rápido
+
+- no final do processo, o motor V8 combina interpretação e compilação just-in-time (JIT) para equilibrar tempo de inicialização com performance de execução
+
+# NODEJS - SUAS CARACTERÍSTICAS TÉCNICAS (ASSÍNCRONO, SINGLE THREAD E ORIENTADO A EVENTOS)
+
+AMBIENTE DE EXECUÇÃO ASSÍNCRONO: trabalha de forma a não bloquear a aplicação no momento de sua execução, coloando os processos mais demorados para um segundo plano
+
+- trabalha em apenas uma única thread principal (event loop) em vez de criar threads por requisição, porem ele usa um pool de threads (via libuv) para operações de I/O como leitura de arquivos e DNS, a pessoa desenvolvedora não gerencia essas threads diretamente, porém elas existem, otimizando o processo sem sacrificar a capacidade de lidar com I/O concorreten
+
+- possui característica não bloqueante, por isso não é lento e nem demora para processar equisições, relacionada ao seu sistema de callbacks e ao event loop (loop de eventos)
+
+- Node possui características como:
+
+- ESCALABILIDADE: entregar soluções para arquiteturas escaláveis, o que explica a adoção por grandes empresas de tecnologias
+- MULTIPLATAFORMA: podemos criar soluções web e aplicações desktop
+- OPEN SOURCEç: código aberto, o que possibilita contribuir com o projeto e até mesmo realizar customizações
+- MULTI-PARADIGMA: adotar várias formas de codigicar usando paradigmas como orientação a objetos, funcional e orientado a eventos
+
+# NODE E MÓDULOS: COMO ORGANIZAR E REPAROVEITAR CÓDIGO
+
+- o node trabalha fortemente com o conceito de módulo, que visa orgnaizar o código em partes pequenas e especializadas, além de aplicar o princípio de encapsulamento, quer seria esconder o código e expor somente o necessário ea outras partes da aplicação
+
+# USO DO NPM NO NODE PARA GERENCIAMENTO DE DEPENDÊNCIAS
+o uso do NPM (Node Package Manager) é um dos maiores motivos para o sucesso do Node.js
+
+ele permite compartilhar os módeulo que criamos com a comunidade além de possibilitar a reutilização de módulos criados por outras pessoas desenvolvedoras
+
+- para verificar a instalação e versão do NOM, pode executar o comando - npm -v
+
+por meio do NPM podemos gerenciar todas as dependências dos projetos JavaScript que estamos desenvolvendo, com ele temos acesso a várias bibliotecas e frameworks do JS
+
+
+
