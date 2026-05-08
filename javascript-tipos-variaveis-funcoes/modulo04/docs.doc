@@ -1,0 +1,38 @@
+# Aula 01 - Operadores Aritméticos
+
++ adição
+- subtração
+* multiplicação
+** exponenciação
+/ divisão
+% resto da divisão
+
+# Aula 02 - Operadores Lógicos
+
+Operador OU (||):
+Ele faz com que uma condição seja verdadeira se pelo menos uma das condições envolvidas for verdadeira
+
+Operador E (&&): 
+Ele exige que TODAS as condições sejam verdadeiras para que o resultado seja verdadeiro
+
+Operador ! (NÃO lógico ou negação):
+Inverte o valor do operando. Se o operando for true, ! retorna false. Se o operando for false, ! retorna true
+
+
+Esses operadores são essenciais para controlar o fluxo do seu programa, permitindo que você estabeleça se precisa que apenas algumas condições sejam atendidas ou se todas elas são necessárias
+
+# Aula 03 - Valores truthy e falsy
+
+Valores Truthy (verdadeiros):
+São avaliados como verdadeiros pelo JavaScript. Exemplos incluem o booleano true, objetos vazios, arrays vazios, qualquer número diferente de zero (positivo ou negativo), strings com conteúdo e datas
+
+Valores Falsy (falsos):
+São avaliados como falsos pelo JavaScript. Incluem o booleano false, null, undefined, zero numérico, menos zero, NaN (not a number) e strings vazias
+
+# Aula 04 - Operadores de Comparação
+
+Diferença entre == e ===
+
+O operador com dois iguais (==) compara apenas o valor, realizando conversões de tipo automaticamente. Por exemplo, a string "0" é considerada igual ao número 0
+
+O operador com três iguais (===) compara tanto o valor quanto o tipo de dado. Nesse caso, a string "0" não é igual ao número 0, pois são tipos diferentes
