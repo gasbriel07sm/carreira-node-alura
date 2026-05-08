@@ -1,0 +1,50 @@
+# Aula 01 - Funções
+
+DECLARAÇÃO E EXECUÇÃO DE FUNÇÕES:
+Uma função é declarada usando a palavra-chave function, seguida de um nome descritivo em camelCase, parênteses e um bloco de código entre as chvaes
+
+Existem dois momentos na função:
+
+>> declaração da função (escrever o código)
+>> invocação / chamar a função (executá-la)
+
+- sem a invocação a função não faz nada
+
+PARÂMETROS E ARGUMENTOS
+Parâmetros são informações que você passa para dentro da função através dos parênteses, eles permitem que a função possa ser reutili´zavel com diferentes dados
+
+Uma função pode ter nenhum, um ou múltiplos parâmetros
+
+OBS! É importante passar os argumentos na mesma ordem em que foram declarados, caso contrário o código pode não funcionar como o esperado
+
+RETORNO DE UMA FUNÇÃO
+O return é uma palavra-chave que faz a função devolver um resultado para ser utilizado em outro lugar no código, isso é diferente de console.log(), que apenas exibe informações no terminal, se você quer usar o resultado de ua função em outro processamento, precisa usar return
+
+########################################################################################################################################
+# Aula 02 - Expressão de função
+
+A expressão de função é nós atribuirmos uma função a uma variável, utilizando const
+
+A diferença entre funções e expressão de funções é o HOISTING
+- neste caso as funções declaradas são "içadas" para o topo do arquivo automaticamente pelo JS, o que permite chamá-las antes de sua declaração no código, enquantocom expressões de funções não possuem esse comportamento
+
+- o JS somente reconhece a expressão de função no momento em que o interpretador passa pela linha onde ela está atribuída a variável
+
+EXPRESSÕES DE FUNÇÃO === FUNÇÕES ANÔNIMAS
+- funções anônimas são funções que não possuem um nome próprio, você consegue chamá-las porque as atribui a uma variável
+
+########################################################################################################################################
+# Aula 03 - Arrow Functions
+
+Arow functions é a forma mais moderna de escrever funções em JavaScript, uma expressão de função que utiliza a sintaxe com seta (=>) no lugar da palavra-chave function
+
+Sintaxe básica:
+
+const nomeFuncao = (parametros) => {}
+
+Arrow functions são anônimas e não são "içadas", ou seja, não podem ser chamadas antes de serem declaradas
+
+Para funções apenas uma linha de instrução, você pode usar forma mais resumida, suprimindo as chaves e palavras-chace return:
+const exibeNome = (nome) => nome;
+
+Usamos funções para quebrar o código ekm blocos menores, executá-los apenas quando necessário e separar responsabilidades, onde cada função realize uma pequena tarefa específica
