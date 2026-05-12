@@ -1,0 +1,139 @@
+# Aula 01 - Introdução a arrays
+
+Array é uma forma de armazenar múltiplos valores em uma única variável
+
+Array é indexado, começa do índice 0, e acessamos por meio de colchetes além de declarar por colchetes também
+
+EX:
+
+notas = [10, 6.8, 8, 7.5];
+notas[0] -> acessando o array notas na posição 0
+
+Podemos acessar o tamanho total do array por meio da propriedade .length
+
+########################################################################################################################################
+# Aula 02 - Como funcionam o array
+
+O QUE É UM ARRAY:
+Um array é uma sequência ou lista de elementos
+
+ÍNDICES E POSIÇÕES:
+Cada elemento do array ocupa uma posição identificada por um índice. O primeiro elemento sempre está no índice 0, o segundo no índice 1 e assim por diante
+
+Para acessar um elemento, você usa a notação nomeDoArray[índice]
+
+EX:
+
+nota[2] -> acessa o terceiro elemento
+
+ORDEM DOS ELEMENTOS:
+Os elementos mantém sempre a mesma ordem no array, a menos que você os manipule propositalmente
+
+DIVERSIDADE DE TIPOS DE DADOS:
+Permitimos que um array contenha diferentes tipos de dados na mesma lista: números, strings, booleanos, outros arrays e até objetos
+
+Ou seja, arrays são listas numeradas que começam no índice 0 e permitem armazenar mútiplos valores acessíveis pela sua posição
+
+########################################################################################################################################
+# Para saber mais: O que são arrays
+
+O array pode armazenar diversos valores, podendo ser usado para agrupar diferentes dados que têm relação entre si
+
+EX:
+
+const numero1 = 50;
+const numero2 = 43;
+const numero3 = 12;
+ 
+// utilizando array
+const numeros = [50, 43, 12];
+
+Desta forma, um array pode ser definido como uma lista ordenada de valores enumerados em que cada valor é chamado de elemento, ou item, e cada elemento se localiza numa posição fixa na lista chamada índice
+
+UMA LISTA ORDENADA DE VALORES ENUMERADOS
+Valores estamos nos referindo a dados de algum tipo, como string (texto), number (número), booleano (true ou false) ou outros dados reconhecidos pelo JavaScript
+
+const arrayDeNumeros = [50, 43, 12];
+const arrayDeStrings = ["banana", "alura", "Juliana"];
+
+Como uma lista ordenada, entendemos que os dados dos arrays estão em uma ordem definida e se manterão nessa ordem
+Estão enumerados, ou seja, cada um está associado a um identificador numérico que diz qual é a sua posição na lista
+Caso não seja feita nenhuma alteração no array, seus valores sempre aparecerão na mesma ordem
+
+CADA VALOR É CHAMADO DE ELEMENTO OU ITEM
+Chamamos de elemento ou item cada um dos valores da lista
+
+// array com 1 elemento
+const numero = [5];
+ 
+// array com 3 elementos
+const nums = [50, 43, 12];
+
+Lembre-se que cada elemento corresponde a um dado, separado por vírgula, o espaço é opcional, porém facilita a leitura
+
+CADA ELEMENTO ESTÁ LOCALIZADO EM UMA POSIÇÃO DA LISTA, CHAMADA ÍNDICE
+Se um array é uma lista ordenada, então é possível acessar cada um dos dados (valores) nele se soubermos a posição dele na lista
+
+const nums = [50, 43, 12];
+// o número 43 está na posição de índice 1 (segunda posição) nessa lista de três números.
+
+Chamamos de índice (index) o número que identifica a posição de um valor em um array
+
+PROPRIEDADE LENGTH
+Ela especifica o tamanho de um array, ou seja, o número de elementos, não estamos falando de índices ou posições e sim da quantidade de valores (dados) contidos no array
+
+// índice     0   1   2   3
+const nums = [50, 43, 12, 98];
+console.log(nums.length) //4
+
+########################################################################################################################################
+# Para saber mais: índices de array e memória
+
+Os arrays são implementados como objetos, ou seja, internamente os índices são tratados como chaves (propriedades) de um objeto, onde cada chave é associada ao seu valor correspondente (o elemento do array)
+
+A memória em JS é gerenciada automaticamente pelo mecanismo do navegador ou do ambiente de execução, quando você cria um array e adiciona elementos a ele, o mecanismo aloca espaço na memória para armazenar esses elementos sequencialmente, de acordo com seus índices
+
+Cada elemento está localizado em um espaço de memória sequencial, e o acesso aos elementos do array é feito diretamente por meio dos índices correspondentes
+
+Os índices de um array são números inteiros que representam a posição de cada elemento do array, internamente esses índices são tratados como chaves de um objeto, e os elementos são armazenados sequencialmente na memória conforme são adicionados no array, permitindo acessar rapidamente os elementos usando seus índices correspondentes
+
+########################################################################################################################################
+# Aula 03 - Adicionando elementos
+
+Para adicionarmos elementos a um array, usamos o método push() que adiciona elementos ao final do array
+
+CONST -> podemos usar const em arrays, mesmo que const não permita reatribuição, podemos modificar os valores de array utilizando const
+
+########################################################################################################################################
+# Aula 04 - Excluindo elementos
+
+Para excluirmos elementos de um array, usamos o método pop() que serve para remover o último elemento de um array
+
+Diferente do push(), o pop não precisa de parâmetros, já que ele sempre irá remover o último elemento do array
+
+OBS! O método pop e o push alteram o array original
+
+########################################################################################################################################
+# Para saber mais: arrays truthy ou falsy
+
+Valores truthy ou falsy se referem à avaliação de valores de acordo com seu contexto booleano, um falor falsy é aquele valor considerado falso quando avaliado como booleano, enquanto um truthy é considerado verdadeiro nesse mesmo contexto
+
+VALORES FALSY:
+- Zero (0)
+- String vazia ('')
+- NaN (Not a Number)
+- null 
+- undefined
+
+VALORES TRUTHY:
+- Strings não vazias
+- Números diferentes de zero
+- Arrays
+- Objetos
+
+########################################################################################################################################
+# Para saber mais: métodos de arrays:
+
+Um método é uma função chamada (executada) no contexto de um objeto (array, number, string, etc)
+
+Métodos servem para realizar tarefas pré-definidas usando o valor que está no contexto e dos parâmetros que passamos para eles, como adicionar, remover ou encontrar elementos
