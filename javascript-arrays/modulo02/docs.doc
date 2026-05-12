@@ -1,0 +1,45 @@
+# Aula 01 - Dividindo com slice()
+
+O método slice() permite criar um novo array a partir de uma parte de outro array, o método slice() recebe dois parâmetros: o índice inicial e o índice final (sendo o fim opcional e não incluso)
+
+########################################################################################################################################
+# Aula 02 - Alterando com splice()
+
+O método splice() permite tanto a remoção de elementos quanto a adição de elementos em qualquer posição do array, diferente de outros método 
+
+Recebe parâmetros:
+
+-- primeiro parâmetro: o índice onde começará a alteração
+-- segundo parâmetro: quantos elementos serão removidos a partir daquele índice
+-- terceiro parâmetro (opcional): elementos a serem adicionados (separados por vírgula) 
+
+O splice() altera o próprio array, não cria um novo, você modifica diretamente a lista original
+
+########################################################################################################################################
+# Aula 03 - Concatenando Arrays
+
+Para concatenarmos um array podemos usar o método concat() para unirmos os dois arrays em um único array
+
+O método concat() não altera os arrays originais, mas retorna um novo array com a concatenação, neste caso a ordem importa, o array que chama o método aparece primeiro no resultado, seguidos pelos elementos do array passado por parâmetro
+
+########################################################################################################################################
+# Aula 04 - Array de Arrays
+
+Podemos fazer um array de duas dimensões (matrizes), colocando um array inteiro como elemento dentro de outro array
+
+Podemos fazer um for dentro de outro for para percorremos a matriz completa
+
+Útil quando precisamos organizar os dados em linhas e colunas, fazendo operações com matrizes ou até mesmo criar grids
+
+########################################################################################################################################
+# Para saber mais: Matrizes
+
+São arrays que contém arrays, podendo ter um único array ou vários dentro do principal
+
+const nomes = ["Ana", "Juliana", "Leonardo"];
+const idades = [30, 35, 28];
+const faculdade = [false, true, true];
+ 
+const funcionarios = [nomes, idades, faculdade];
+
+Matrizes são utilizadas quando precisamos de vários arrays similares ou com informações ligadas às outras, como as notas de uma classe com vários alunos
