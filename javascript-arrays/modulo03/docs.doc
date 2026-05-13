@@ -1,0 +1,55 @@
+# Aula 01 - Procurando na lista
+O método .includes() é usada para verificar se o nome existe no array de estudantes
+
+Usamos o método .indexOf() para obter a posição (índice) dentro de um array
+
+OBS! O método .includes() retorna true ou false, o que torna adequado quando usamos ele dentro de uma condição if
+
+########################################################################################################################################
+# Aula 02 - Desestruturando uma lista
+
+Usamos desestruturação para "desmontar" um array e atribuir seus elementos a variáveis diferentes de forma mais simples e legível
+
+Por exemplo, ao inves de usarmos lista[0] e lista[1] podemos fazer
+
+const [aluno, media] = lista;
+
+Criamos duas variáveis que recebem o primeiro e segundo elemento do array respectivamente
+
+########################################################################################################################################
+# Para saber mais: Diferença entre i++ e ++i
+
+Ambos são operadores de incremento usados para aumentar o valor de uma variável i em 1. A diferença está na forma como o aumento é aplicado e quando o valor é retornado
+
+i++ -> PÓS-INCREMENTO
+Primeiro retorna o valor atual de i e depois incrementa i em 1 unida, ou seja, o valor atual de i é usado na expressão em que i++ está presente, e após isso, i é aumentado em 1
+
+++i -> PRÉ-INCREMENTO
+Primeiro incrementa i em 1 unidade e depois retorna o novo valor de i, ou seja, o valor de i é incrementado iomediatamente, e então o valor atualizado é usado na expressão em que ++i está presente
+
+A diferença está no momento em que ocorre o incremento, i++ retorna o valuar atual de i e depois incrementa, enquanto ++i incrementa em i primeiro e depois retorna o novo valor
+
+########################################################################################################################################
+# Aula 03 - For Clássico
+
+Podemos percorrer um array utilizando a estrutura de repetição for, o objetivo é executar a mesma tarefa para cada elemento de um array, independentemente de quantos elementos ele tenha
+
+A sintaxe do for clássico é composta por três partes principais:
+
+-- INICIALIZAÇÃO: onde criamos uma variável de controle, geralmente começando pelo número 0, já que os arrays começam com o índice 0
+-- CONDIÇÃO DE EXECUÇÃO: o laço continua se repetindo enquanto essa condição for verdadeira
+-- INCREMENTO: executado sempre ao final de cada repetição, pode ser um valor que irá aumentar ou reduzir o valor da variável de controle
+
+########################################################################################################################################
+# Para saber mais: o loop infinito
+
+Quando utilizamos laços de repetição, precisamos deixar claro qual é a condição de execução do loop, senão o programa irá ficar "preso" entrando em um loop infinito, podendo travar seu navegador ou terminal em que o código estiver sendo executado ou até mesmo do computador.
+
+########################################################################################################################################
+# Aula 04 - For...of
+
+O for...of é uma estrutura de repetição mais simples do que o for clássico, a principal diferença é que o for of não exige o controle das três expressões que o for clássico possui
+
+O for...of é ideal quando você quer percorrer todos os elementos de um array do ínicio ao fim, sem necessidade de controlar índices ou pular elementos, em vez de armazenar o índice, ele armazena diretamente o valor do elemento a cada iteração
+
+A sintaxe é mais legível e concisa: for (let nota of notas), onde nota é o elemento e notas é o array
