@@ -1,0 +1,22 @@
+# Aula 01 - Filtrando o array
+O método filter() permite filtrar elemetnos de um array baseado em uma condição específica.
+
+O filter é um método callback que recebe uma função como parâmetro, sendo essa função executada para cada elemento do array, a função dentro do filter() deve retornar true ou false, se for true ele é incluído dentro do novo array, se retornar false é descartado
+
+O filter() sempre retorna um novo array com os elementos que passaram na condição, ou um array vazio se nenhum elemento atender
+
+Podemos usar o undescore (_) para marcar parâmetros não utilizados na função, mantendo a ordem correta dos parâmetros
+
+########################################################################################################################################
+# Aula 02 - Reduzindo o array
+Usamos o reduce() que recebe uma função callback com dois parâmetros principais, o primeiro que é o acumulador que iráq armazenar o resultado parcial e o segundo que é o elemento atual do array sendo iretado, além desso o segundo parâmetro fora da função callback que será o valor incial do acumulador
+
+########################################################################################################################################
+# Aula 03 - Clonando um array
+O array é uma estrutura que passa seus valores por referência, então não poderíamos apenas atribuir um novo array com o operador de atribuição (=), precisamos do spread operador (operador de espalhamento) que são os três pontos (...), ele é responsável por "espalhar" todos os valores do array original dentro de um novo array, criando uma cópia verdadeira e independente
+
+########################################################################################################################################
+# Aula 04 - Set
+Podemos remover valores duplicados com a estrutura Set que é um conjunto de dados que armazena apenas valores únicos, diferente dos arrays que podem ter elementos repetidos
+
+Para convertermos um Set para array usamos o operador de espalhamento (...)
