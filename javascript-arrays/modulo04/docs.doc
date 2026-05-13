@@ -1,0 +1,37 @@
+# Aula 01 - forEach()
+O método forEach() é um laço de repetição específico do JS, para iterarmos sobre os arrays
+
+O forEach() funciona de uma diferente do for clássico, nós devemos passar uma função como parâmetro para ele, e essa função será executada automaticamente para cada elemento do array, essa função que é passada como parâmetro, nós chamados de função callback
+
+Podemos separar a função callback em uma função nomeada e apenas referenciar seu nome no forEach(), sem utilizar os parênteses, onde o próprio método se encarrega de passar cada elemento do array como parâmetro para a função
+
+########################################################################################################################################
+# Para saber mais: for...of VS callbacks
+
+->> FOR
+O for é muito conveniente pois pode ser utilizado de vários tipos de iteráveis e deixa explícita quais são todas as "fases" de cada loop, também chamamos um loop de laço de repetição ou iteração
+
+ITERÁVEL: representa uma sequência de elementos que pode ser perocrrida, ou seja, iterada utilizando ferramentas próprias para isso.
+
+O for torna muito versátil no nosso código pois possuimos fases declaradas de forma explícita, podendo ser alteradas conforme a necessidade, tornando uma das formas mais utilizadas pela sua versatilidade
+
+->> FOR...OF
+Diferente do for que nos traz mais controle sobre de que forma o laço de repetição irá ocorrer, o for...of as condições são mais "fixas", onde cada elemetno se refere a cada elemento (ou item) do array e o loop sempre ocorre de forma sequencial, do primeiro elemento até o último
+
+->> FOREACH()
+
+MÉTODO: método é uma função que é propriedade de um objeto
+
+Possui papel de iterar sobre os arrays porém com funcionalidades e retorno bem definidos, onde ele irá executar as instruções que forem passadas para cada elemento iterado porém sem retonar nenhum dado
+
+Receb uma função como parâm,etro, onde esta função será utilizada como parâmetro para cada um dos elementos do array
+
+########################################################################################################################################
+# Aula 02 - Map
+
+O método map() é uma função callback muito útil para transformar arraysm, pois o map() retorna um novo array com os resultados das transformações aplicadas a cada elemento
+
+########################################################################################################################################
+# Para saber mais: Strings são arrays?
+
+Strings além de serem um tipo de dado usado para representar textos, também se define como uma sequência ordenada de caracteres
