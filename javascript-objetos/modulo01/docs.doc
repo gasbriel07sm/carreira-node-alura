@@ -1,0 +1,43 @@
+# Aula 01 - Objetos
+Objetos são uma estrutura de dados que é mais adqueada que os arrays para a representação de informações mais complexas.
+
+Arrays são bons para armazenar dados simples, do mesmo tipo, como uma lista de CPF's, porém para guardarmos múltiplas informações o array se torna problemático, pois os dados ficam todos sequenciais sem indicadores claros do que cada posição representa
+
+Assim, usamos os objetos como forma de solucionar esse problema
+
+const obj = {}
+
+Objetos refletem a realidade de forma abstrata, quando queremos descrever entidades do mundo real, com várias características diferentes, objetos são a escolha ideal
+
+########################################################################################################################################
+# Aula 02 - Acessando objetos
+Um objeto é composto por pares de chave e valor, e que para acessar cada propriedade individual, podemos usar a notação de chaves ou notação de colchetes
+
+Uma vez a propriedade acessada, conseguimos manipulá-la como faria com qualquer dado do mesmo tipo
+
+########################################################################################################################################
+# Aula 03 - Adicionando e Alterando
+
+> ADICIONANDO PROPRIEDADES: 
+Ao testar uma propriedade que não existe em um objeto, o JS retorna como undefined
+Para criar uma nova propriedade, basta usar a sintaxe:
+
+objeto.propriedade = valor
+
+O JS automaticamente adiciona essa propriedade ao objeto, mesmo que ela não existisse antes
+
+> ALTERANDO PROPRIEDADES:
+Ao usar a mesma sintaze em uma propriedade que já existe, o JS atualiza o seu valor
+
+> OBJETOS COM CONST:
+Podemos criar objetos com const e depois adicionar ou modificar suas propriedades normalmente, a restrição do const é que você não pode reatribuir o objeto inteiro a outro valor, mas pode alterar o conteúdo dele
+
+OBS!! Objetos não são ordenados como arrays, você manipula dados através das chaves (propriedades) não pela posição
+
+########################################################################################################################################
+# Para saber mais: como deletar uma propriedade?
+Podemos utilizar o operador delete e o nome da propriedade com a notação ponto ou colchetes
+
+OBS!! Delete remove do objeto o valor d apropriedade, assim como a chave
+
+O valor de retorno do operador delete é um booleano, ou seja, retorna sempre true ou false para cada operação, porém, é importante notar que ele não retorna false se tentarmos remover, uma propriedade que não existe no objeto
