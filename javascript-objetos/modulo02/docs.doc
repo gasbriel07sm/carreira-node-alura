@@ -1,0 +1,13 @@
+# Para saber mais: qual o tipo de dado correto?
+
+Os objetos são cruciais para organizar e armazenar dados de forma maiis complexa do que variáveis isoladas, podendo conter diferentes tipos de dados, oferecendo flexibilidade na modelagem e representação de informações
+
+########################################################################################################################################
+# Para saber mais: entendendo o this
+
+This se refere ao próprio objeto no qual a função está sendo chamada, é uma referência dinâmica o que significa que o valor  de this pode mudar dependendo do contexto em que a função é chamada
+
+ARROW FUNCTIONS E O THIS
+Arrow functions não possuem um this próprio, ao invés disso elas herdam o valor de this do contexto em que foram definidas, isso pode causar problemas, pois o this pode não se referir ao objeto esperado
+
+OPTE POR FUNÇÕES TRADICIONAIS AO CRIAR MÉTODOS EM OBJETOS PARA GARANTIR QUE O THIS ESTEJA VINCULADO AO CONTEXTO APROPRIADO, FACILITANDO O ACESSO E A MANIPULAÇÃO DE DADOS DE FORMA CONSISTENTE
