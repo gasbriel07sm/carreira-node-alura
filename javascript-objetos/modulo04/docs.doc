@@ -1,0 +1,84 @@
+# Aula 01 - Formato JSON
+JSON (JavaScript Object Notation) é um formato muito importante e comum em programação, o JSON é uma estrutura de dados baseada na notação de objeto JS, usada para transmitir informações entre bancos de dados e aplicações front-end
+
+JSON é uma estrutura de dados que utiliza a notação de objeto JavaScript com base, mas não é um tipo de dado do JavaScript em si, é amplamente utilizado em várias linguagens de programação, não paenas em JavaScript
+
+DIFERENÇAS ENTRE OBJETO JAVASCRIPT E JSON:
+>> JSON, as chaves (nomes das propriedades) precisam estar entre aspas duplas, enquanto no objeto JS isso não é obrigatório
+>> JSON aceita apenas aspas duplas para strings, nunca aspas simples
+>> JSON não permite trailling commas (vírgulas sobrando após a última propriedade), diferente do JS que permite
+>> JSON não pode conter variáveis, funções ou comentários
+
+TIPOS DE DADOS PERMITIDOS PELO JSON:
+>> JSON suiporta apenas dados primitivos: strings, números, booleanos, null, arrays e objetos
+
+JSON substituiu o XML como formato padrão de transmissão de dados porque é mais sucinto, dinâmico e tem uma leitura mais fácil e clara
+
+########################################################################################################################################
+# Para saber mais: API? REQUISIÇÃO? HTTP?
+
+API (Application Programming Interface) -> Interface de Programação de Aplicações
+>> API's são interfaces entre aplicações, ou seja, podemos pensar em APIs como pontos de contato ou comunicação entre partes de um sistema ou entre sistemas diferentes
+
+>> Back-end de uma aplicação disponibiliza uma API para que o front=end possa buscar dados para popular uma página
+
+API E JSON
+O formato JSON é o padrão atual para envio de recebimento de dados entre aplicações, ou seja, usamos o JSON para:
+>> FRONT-END: pegar dados e enviar para o back-end
+>> BACK-END: consultar dados armazenados e formatá-los em JSON para enviá-los para o front
+
+JSON E REQUISIÇÕES
+Para transistar um objeto JSON entre computadores na web atráves do protocolo HTTP é necessário transformar toda a estrutura em strings, pois nessa comunicação trafegam apenas dados em texto
+
+> Comum a operação de trasnformar um JSON em string e também reconverter um texto em JSON para que o objeto possa ser utilizado pelo programa
+
+########################################################################################################################################
+# Para saber mais: importação de módulos e require
+require() é uma função nativa do Node, ela permite passar o caminho de um arquivo terminado em .json para obter o conteúdo do arquivo já convertido para objeto JavaScript, vemos que essa função também pode ser utilizada para importação de códigos que estão em outros arquivos também chamados de módulos
+
+Conversão automática de um objeto JSON para um objeto JS é uma das propriedades específicas do require()
+
+A modularidade é uma característica que permite que devs dividam seus programas em partes mais gerenciáveis e reutilizáveis, onde a importação de módulos é uma prática fundamental nesse contexto, e a função require desempenha um papel vital nesse processo
+
+USANDO require PARA IMPORTAR MÓDULOS
+Ao usarmos require, é possível incluir funcionalidades de outros arquivos, promovendo a reutilização de código e manutenção eficiente
+
+// Exemplo de importação de um módulo em Node.js
+const moduloExemplo = require('./meuModulo.js');
+
+// Agora, podemos utilizar as funcionalidades do 'meuModulo'
+moduloExemplo.minhaFuncao();
+
+IMPORTAÇÃO DE MÓDULOS JSON
+Além da importação de módulos JS, o require também é usado para carregar arquivos JSON, que são amplamente utilizados para armazenar condigurações e dados estruturados. Onde ao importar um arquivo JSON, o Node.js, automaticamente o converte para um objeto JS
+
+// Importando um arquivo JSON em Node.js
+const configuracoes = require('./configuracoes.json');
+
+// Agora, 'configuracoes' contém o conteúdo do arquivo JSON
+console.log(configuracoes);
+
+CAMINHOS RELATIVOS E MÓDULOS NATIVOS
+Ao usarmos require, é possível especificar caminhos relativos para módulos próprios ou caminhos absolutos para módulos de terceiros, além disso, o Node fornece uma variedade de módulos nativos que podem ser importados sem a necessidade de instalação adicional
+
+// IMPORTAÇÃO DE MÓDULO NATIVO EM NODE
+const fs = require('fs');
+-> fs agora contém a funcionalidade do módulo File System
+
+EXPORTAÇÃO DE MÓDULOS
+Para que um módulo seja importável, é necesssário exportá-lo corretamente, a exportação pode ser feita atribuindo o que se deseja exportar à propriedade module.exports;
+
+// Exemplo de exportação de um módulo em Node.js
+function minhaFuncao() {
+  console.log('Executando minha função...');
+}
+
+module.exports = minhaFuncao;
+
+########################################################################################################################################
+# Aula 02 - Operações JSON
+JSON.stringify() -> serve para converter um objeto JS em uma string, essencial quando precisamos enviar dados via requisição HTTP, pois a transmissão entre cliente e servidor exige que os dados estejam em formato de string
+
+JSON.parse() -> faz o processo inverso, convertendo uma string JSON de volta para um objeto JS, permitindo que manipule os dados novamente, podendo acessar suas propriedades
+
+IMPORTANTE: pois ao transformarmos um objeto em string, perdemos a capacidade de acessar as propriedades do objeto, por isso é fundamental converter de volta com parse() quando precisamos trabalhar com esses dados
