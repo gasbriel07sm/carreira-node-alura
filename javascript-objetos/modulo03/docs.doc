@@ -1,0 +1,74 @@
+# Para saber mas: métodos de objetos
+Um método é uma função que é executad no contexto de um objeto e está associada a ele, em um objeto literal, métodos são definidos da mesma forma que as funções normais são definidas, tendo parâmetros, retorno e um bloco definido, com exceção do caso das arrows functions e do uso do this.
+
+>> Object.keys() e Object.values(): usados para extrair informações específicas de um objeto, onde esses métodos fornecem as chaves e os valores presentes em um objeto respectivamente
+Úteis para iterar ou fazer opreações específicas em conjuntos de dados de um objeto
+
+>> Object.entries(): esse método retorna um array de arrays que representam pares chave-valor, útil em situações que demandam iterações mais complexas ou manipulações mais minuciosas dos dados
+
+>> Object.assign()> usado para fusão e cópia de objetos, esse método permite combinar propriedades de diferentes objetos em um único objeto
+
+########################################################################################################################################
+# Para saber mas: propriedades enumeráveis
+Objetos são estruturas que armazenam dados em pares chave-valor, onde cada propriedade em um objeto possui atributos que determinam seu comportamento e acessibilidade, uma característica importante dessas propriedades é a enumeração, que define se uma propriedade será incluída em operações como iteração
+
+PROPRIEDADES ENUMERÁVEIS:
+São aquelas consideradas durante operações de iteração, como for...in e métodos como Object.keys(), onde por padrão todas as propriedades criadas diretamente em um objeto são enumeráveis, o que significa que elas são visíveis durante a iteração
+
+const meuObjeto = {
+  nome: "ChatGPT",
+  linguagem: "JavaScript",
+  versao: "3.5"
+};
+
+for (let chave in meuObjeto) {
+  console.log(chave); // Saída: nome, linguagem, versao
+}
+
+PROPRIEDADES NÃO ENUMERÁVEIS:
+São aquelas consideradas durante operações de iteração, geralmente associadas a métodos internos de objetos ou configurações específicas que não precisam ser expostas durante interações comuns 
+
+const meuObjeto = {};
+
+Object.defineProperty(meuObjeto, 'propriedadeNaoEnumeravel', {
+  value: 42,
+  enumerable: false
+});
+
+for (let chave in meuObjeto) {
+  console.log(chave); // Saída: (nenhuma, pois não há propriedades enumeráveis)
+}
+
+MANIPULANDO ENUMERABILIDADE
+Para controlar a enumerabilidade de uma propriedade, usamos a função Object.defineProperty(), onde o segundo argumento desta função permite a configuração de diversas propriedades, incluindo a enumerabilidade
+
+const meuObjeto = {};
+
+Object.defineProperty(meuObjeto, 'propriedadeNaoEnumeravel', {
+  value: 42,
+  enumerable: false
+});
+
+console.log(Object.keys(meuObjeto)); // Saída: []
+
+const meuObjeto = {};
+
+// Criando uma propriedade não enumerável
+Object.defineProperty(meuObjeto, 'propriedadeNaoEnumeravel', {
+  value: 42,
+  enumerable: true // Definindo a enumerabilidade como true
+});
+
+// Mesmo com enumerable:true, Object.keys ainda pode ser utilizado
+console.log(Object.keys(meuObjeto)); // Saída: ['propriedadeNaoEnumeravel']
+
+// Exibindo o valor da propriedade
+console.log(meuObjeto.propriedadeNaoEnumeravel); // Saída: 42
+
+enumerable: true ->> significa que a propriedade será listada ao utilizarmos Object.keys(), mesmo sendo enumerável, o valor da propriedade ainda pode ser acessado normalmente
+
+########################################################################################################################################
+# Para saber mais: operador de espalhamento 
+Spread Operator, onde este operador serve para copiar as propriedades de objetos para outros, "espalhando" os conteúdos
+
+OBS! Caso a sintaxe de espalhamento for usada em objetos que tenham chaves/propriedades com o mesmo nome, o JS irá sobrescrever o valor destas propriedades à medida que encontra novos valores com o mesmo nome de chave
