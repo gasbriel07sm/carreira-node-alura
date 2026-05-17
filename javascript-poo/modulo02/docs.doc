@@ -1,0 +1,121 @@
+# Aula 01 - Entendendo o this
+Quando passamos uma função de um objeto a uma variável, ela perde a conexão com o objeto original, o this dentro dessa função não sabe mais a qual objeto ele se refere, porque não tem um contexto atrelado a ele.
+
+Podemos usar o método bind(), serve para prender ou ligar uma função a um objeto específico, restaurando seu contexto, dizemos a onde devem ser ligadas, a um contexto específico
+
+O this é contextual
+
+########################################################################################################################################
+# Para saber mais: call e apply
+Métodos para manipular o contexto de this, temos call() e apply()
+
+>> call()
+Executa a função passando valores e parâmetros específicos para serem usados como contexto do this, ou seja, é possível atribuir um this diferente do contexto atual ao executar a função
+
+function exibeInfos() {
+ console.log(this.nome, this.email)
+}
+
+const user = {
+ nome: 'Mariana',
+ email: 'm@m.com'
+}
+
+exibeInfos.call(user)
+
+Faz com que a função seja executada em determinado contexto, mesmo após ser instanciada
+
+function User(nome, email) {
+ this.nome = nome
+ this.email = email
+
+ this.exibeInfos = function(){
+   console.log(this.nome, this.email)
+ }
+}
+
+const newUser = new User('mariana', 'm@m.com')
+
+const outroUser = {
+ nome: 'Rodrigo',
+ email: 'r@r.com'
+}
+
+newUser.exibeInfos() //mariana m@m.com
+newUser.exibeInfos.call(outroUser) //Rodrigo r@r.com
+
+O método call() pode ser utilizado para se implementar herança utilizando funções em vez da sintaxe de classe. 
+
+>> apply()
+Funciona de forma semelhante ao call(), porém recebe a lista de argumentos em um array
+
+function exibeMensagem(nome, email) {
+ console.log(`usuário: ${nome}, email ${email}`)
+}
+ const user = {
+ nome: 'Mariana',
+ email: 'm@m.com',
+ executaFuncao: function(fn) {
+   fn.apply(user, [this.nome, this.email])
+ }
+}
+ user.executaFuncao(exibeMensagem) //usuário: Mariana, email m@m.com
+
+Usando arrays, é possível passar os argumentos via variável ou até mesmo usando a propriedade arguments que existe internamente em todo objeto.
+
+########################################################################################################################################
+# Para saber mais: Function vs Arrow Functions
+Arrow functions herdam automaticamente o contecto de onde foram criadas, e não possuem seu próprio "contexto de invocação", ou seja, não podem ser ligadas a contextos específicos com this e nem fazer uso dos métodos bind(), call(), apply()
+
+Nãopossuem a propriedade prototype, por isso não podem ser usadas como funções construtoras
+
+########################################################################################################################################
+# Aula 02 - Herança de Protótipo
+Object.setPrototypeOf() >> estabelece uma relação de herança entre objetos, essa função recebe dois parâmetros, o primeiro é o objeto que vai herdar e o segundo é o objeto que vai servir como protótipo ou base
+
+Quando chamamos um método, o JS primeiro irá procurar esse método dentro do próprio objeto, se não encontrar, ele procura no protótipo definido
+
+O processo de busca em cadeia pelos protótipos é chamado de cadeia de protótipos
+
+########################################################################################################################################
+# Aula 03 - Cadeia de Protótipos
+Protótipo > todos os objetos em JS herdam de um protótipo base que contém métodos e propriedades comuns, isso vale até para tipos primitivos que internamente são objetos com seus próprios protótipos
+
+A herança de porotótipo é a forma nativa do JS trabalhar com orientação a objetos
+
+########################################################################################################################################
+# Aula 04 - __proto__ vs prototype
+
+let user = {
+ perfil: 'estudante'
+}
+
+let estudante = {
+ nome: 'juliana'
+}
+
+Object.setPrototypeOf(estudante, user)
+
+Aqui definimos que user será usado como protótipo para o objeto estudante
+
+console.log(estudante.nome) // 'juliana'
+console.log(estudante.perfil) //'estudante'
+
+Assim, o objeto estudante, além da propriedade nome, também possui a propriedade perfil trazida do protótipo user
+
+Podemos chamar __proto__ de estudante, se adicionarmos mais uma propriedade ao objeto user, essa propriedade entrará também como protótipo do objeto estudante
+
+Quando usamos objetos e funções para trabalhar com orientação a objetos, os objetos criados não são instâncias diferentes, e sim referências a um mesmo objeto que está sendo delegado aos objetos que o usam como protótipo
+
+O prototype é criado automaticamente e existe como propriedade apenas em funções, para quando queremos usar determinada função como construtor usando new
+
+__proto__ >> propriedade que todosos objetos têm e que apontam para o protótipo ao qual foi definido para aquele objeto
+prototype >> propriedade da função que é definida como protótipo quando usamos new para criar novos objetos
+
+########################################################################################################################################
+# Aula 05 - Usando o operador new
+O operador new é a forma usual de criar objetos em JS usando funções construtoras, uma função construtora é uma função que serve como modelo para criarmos novos objetos
+
+Quando usamos a palavra new, o JS cria um novo objeto, verifica sua posição na cadeia de protótipos e retona esse objeto como contexto para o this
+
+Funções construtoras era a forma mais comum de trabalhar com orientação a objetos em JS antes da sintaxe de classes
