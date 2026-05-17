@@ -1,0 +1,6 @@
+strict mode
+Modo estrito serve para impedir que alguns comportamentos da linguagem causem "falahas silenciosas", ou seja, falahas que não resultam em lançamento de erros pelo programa, ew corrigir alguns que podem induzir bugs potenciais e comportamentos inesperados
+
+JS é uma linguagem que não tem breaking changes, ou seja, não é possível corrigir certos comportamentos não desejados retirando o código das novas versões, pois há o risco de quebrar código que já está rodando
+
+É uma forma de ajudar a contornar alguns comportamentos sem que o código "não estrito" deixe de funcionar
