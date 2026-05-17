@@ -1,0 +1,27 @@
+# Aula 01 - Revisando objetos
+PARADIGMAS DE PROGRAMAÇÃO
+São abordagens sobre como rsolver problemas de programação, baseadas em uma teoria ou conjunto de prinícipios definidos
+
+POO - princípio de espelhar o mundo real através de uma estrutura de objetos com características e ações que interagem uns com os outros, assim nos abstraimos conceitos da vida real dividindo-se em duas partes: características (propriedades) e comportamentos (ações)
+
+Em JS nós representamos isso com objeto literal, que nada mais é que um conjunto de pares chave/valor, onde as características viram propriedades do objeto, e os comportamentos viram funções (métodos) dentro desse objeto
+
+Assim, criamos um modelo que serve como base para outros moldes, assim, a partir desse modelo, nós criamos instâncias (cópias) do objeto com dados diferentes
+
+Podemos criar múltiplas instâncias é um dos fundamentos principais da poo e ajuda a reaproveitar o código de uma forma mais eficiente
+
+########################################################################################################################################
+# Para saber mais: paradigmas da programação
+PARADIGMAS IMPERATIVOS: paradigmas que usamos afirmações para alterar o estado de um programa, da mesma forma como o modo verbal imperativo expressa um comando ou ordem para ser executada, tal categoria se preocupa com o como ua tarefa será executada, com seu passo a passo e a sequência dessas etapas:
+
+>>> ESTRUTURAL
+>>> PROCEDURAL
+>>> ORIENTADO A OBJETOS
+
+PARADIGMAS DECLARATIVOS: paradigmas onde expressamos a lógica de um processo sem descrever o seu controle de fluxo, ou seja, é associado ao "o quê" uma tarefa vai resultar ou retornar, um paradigma que pode se encaixar nessa categoria é o paradigma funcional
+
+########################################################################################################################################
+# Para saber mais: Modelagem UML
+Podemos usar UML (Linguagem de Modelagem Unificada - Unified Modeling Language) para ilustrar sistemas, controles de fluxo e outros comportamentos, consite na padronização de algumas notações para facilitar o entendimento entre os times de desenvolvimento que irão lidar com um determinado sistema
+
+A função dele é representar estruturas e relações entre as classes de um projeto e interfaces com outros sistemas
