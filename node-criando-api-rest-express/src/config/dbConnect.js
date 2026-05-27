@@ -1,8 +1,9 @@
-import moongose, { mongo} from "mongoose";
+import mongoose, { mongo} from "mongoose";
 
 async function conectaMongoDB() {
-  moongose.connect(process.env.DB_CONNECTION_STRING);
-  return moongose.connection;
+  mongoose.set('strictQuery', true); 
+  mongoose.connect(process.env.DB_CONNECTION_STRING);
+  return mongoose.connection;
 }
 
 export default conectaMongoDB;
