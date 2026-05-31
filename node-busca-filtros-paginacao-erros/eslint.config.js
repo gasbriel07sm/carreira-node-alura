@@ -9,7 +9,7 @@ export default defineConfig([
         extends: ["js/recommended"], 
         languageOptions: {
             globals: { ...globals.node, ...globals.browser, ...globals.es2021 },
-            ecmaVersion: 2021,
+            ecmaVersion: 2022,
         },
         rules: {
             "indent": ["error", 4],
